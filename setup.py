@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 # read version from src/cdtools-aps-integration/_version.py
-version_file = os.path.join("src/cdtools-aps-integration", "_version.py")
+version_file = os.path.join("src/cdtools_aps_integration", "_version.py")
 with open(version_file) as f:
     version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", f.read(), re.M)
 if not version_match:
