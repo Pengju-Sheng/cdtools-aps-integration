@@ -13,7 +13,6 @@ import cdtools
 
 def load_dataset(
         scan_id,
-        exp_id,
         base_path='/net/micdata/data2/12IDC/2026_Data/2026_2/02_levitan/preproc',
         distance=None,
         pixel_size=172e-6,
@@ -27,7 +26,7 @@ def load_dataset(
     swap, flipi, flipj = swap_flipi_flipj
     flipx, flipy = flipx_flipy
 
-    base_folder = f'{base_path}/S{exp_id:04d}/'
+    base_folder = f'{base_path}/S{scan_id:04d}/'
     pattern_filename = f'{base_folder}/data_roi0_Ndp{original_asize}_dp.hdf5'
     para_filename = f'{base_folder}/data_roi0_Ndp{original_asize}_dp.hdf5'
 
