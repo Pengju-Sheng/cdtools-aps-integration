@@ -28,7 +28,7 @@ def load_dataset(
 
     base_folder = f'{base_path}/S{scan_id:04d}/'
     pattern_filename = f'{base_folder}/data_roi0_Ndp{original_asize}_dp.hdf5'
-    para_filename = f'{base_folder}/data_roi0_Ndp{original_asize}_dp.hdf5'
+    para_filename = f'{base_folder}/data_roi0_Ndp{original_asize}_para.hdf5'
 
     if verbose:
         print('Loading data from file', pattern_filename)
