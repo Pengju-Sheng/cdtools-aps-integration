@@ -14,7 +14,7 @@ if not version_match:
 version = version_match.group(1)
     
 setuptools.setup(
-    name="cdtools-aps-integration",
+    name="cdtools_aps_integration",
     version=version,
     python_requires='>3.8', # recommended minimum version for pytorch 2.3.0
     author="Pengju Sheng",
