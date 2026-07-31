@@ -24,7 +24,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Pengju-Sheng/cdtools-aps-integration.git",
     install_requires=[
-        "cdtools-py>=0.3.2",
+        "cdtools-py>=0.3.2.dev1",
         "numpy>=1.0",
         "scipy>=1.0",
         "matplotlib>=2.0", 
