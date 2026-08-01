@@ -99,7 +99,6 @@ def load_dataset(
 
     patterns = patterns[...,start[0]:end[0],start[1]:end[1]]
 
-    mask = np.zeros(patterns[0].shape, dtype=np.bool)
     
     if distance is None:
         raise NotImplementedError('Auto-loading distance from saved metadata is not implemented')
