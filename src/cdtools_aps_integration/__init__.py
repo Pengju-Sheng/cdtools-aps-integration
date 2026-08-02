@@ -20,7 +20,7 @@ def load_dataset(
         original_asize=1024,
         center=None,
         swap_flipi_flipj=[0,0,0],
-        flipx_flipy=[0,0],
+        flipx_flipy=[1,1],
         verbose=False,
 ):
     swap, flipi, flipj = swap_flipi_flipj
@@ -98,6 +98,7 @@ def load_dataset(
         raise ValueError(f'Crop region with center [{center[0]},{center[1]}] and asize [{asize[0]},{asize[1]}] resolves to [{start[0]}:{end[0]},{start[1]}:{end[1]}] and exceeds detector size of [{pattern_shape[0]},{pattern_shape[1]}].')
 
     patterns = patterns[...,start[0]:end[0],start[1]:end[1]]
+    mask = mask[start[0]:end[0],start[1]:end[1]]
 
     
     if distance is None:
