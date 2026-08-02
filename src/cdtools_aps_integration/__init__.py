@@ -104,8 +104,8 @@ def load_dataset(
     if projection_num is not None:
         if projection_num < 0 or projection_num >= patterns.shape[0]:
             raise ValueError(f'Projection number {projection_num} is out of bounds for {patterns.shape[0]} projections.')
-        patterns = patterns[projection_num:projection_num+1]
-        translations = translations[projection_num:projection_num+1]
+        patterns = patterns[projection_num]
+
     
     if distance is None:
         raise NotImplementedError('Auto-loading distance from saved metadata is not implemented')
