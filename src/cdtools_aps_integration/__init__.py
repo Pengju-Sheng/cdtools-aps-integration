@@ -16,6 +16,7 @@ def load_dataset(
         base_path='/net/micdata/data2/12IDC/2026_Data/2026_2/02_levitan/preproc',
         distance=None,
         pixel_size=172e-6,
+        projection_num=None,
         asize=None,
         original_asize=1024,
         center=None,
@@ -100,6 +101,11 @@ def load_dataset(
     patterns = patterns[...,start[0]:end[0],start[1]:end[1]]
     mask = mask[start[0]:end[0],start[1]:end[1]]
 
+    if projection_num is not None:
+        if projection_num < 0 or projection_num >= patterns.shape[0]:
+            raise ValueError(f'Projection number {projection_num} is out of bounds for {patterns.shape[0]} projections.')
+        patterns = patterns[projection_num:projection_num+1]
+        translations = translations[projection_num:projection_num+1]
     
     if distance is None:
         raise NotImplementedError('Auto-loading distance from saved metadata is not implemented')
