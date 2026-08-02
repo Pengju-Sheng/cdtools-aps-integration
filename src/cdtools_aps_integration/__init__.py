@@ -55,13 +55,13 @@ def load_dataset(
     translations = np.stack([x,y,0*x], axis=1)
     
     if swap:
-        #mask = mask.transpose(0,1)
+        mask = mask.transpose(0,1)
         patterns = patterns.transpose(1,2)
     if flipi:
-        #mask = mask.flip(0)
+        mask = mask.flip(0)
         patterns = patterns.flip(1)
     if flipj:
-        #mask = mask.flip(1)
+        mask = mask.flip(1)
         patterns = patterns.flip(2)
 
     pattern_shape = np.asarray(patterns[0].shape)
@@ -113,6 +113,7 @@ def load_dataset(
     mask = t.as_tensor(mask)
     patterns = t.as_tensor(patterns)
     translations = t.as_tensor(translations)
+    wavelength = t.as_tensor(wavelength)
 
     dataset = cdtools.datasets.Ptycho2DDataset(
         translations,
